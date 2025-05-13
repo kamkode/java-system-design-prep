@@ -10,7 +10,7 @@ This index provides a structured way to navigate our comprehensive collection of
 🔄 = In progress
 ⏳ = Planned
 
-Total questions created so far: **70+**
+Total questions created so far: **76+**
 
 ## Categories
 
@@ -19,7 +19,7 @@ Total questions created so far: **70+**
 - ⏳ [OOP Concepts](OOP-Concepts.md) - 50+ questions on inheritance, polymorphism, encapsulation, abstraction
 - ⏳ [String Manipulation](String-Manipulation.md) - 30+ questions on String, StringBuilder, StringBuffer
 - ⏳ [Data Types and Operators](Data-Types-Operators.md) - 40+ questions on primitives, boxing/unboxing, bit manipulation
-- ⏳ [Java Memory Model](Java-Memory-Model.md) - 25+ questions on heap, stack, garbage collection
+- 🔄 [Java Memory Model](Java-Memory-Model.md) - 25+ questions on heap, stack, garbage collection
 
 ### Java Collections and Generics
 - ✅ [Collections Framework](Collections-Framework.md) - 10+ questions on Lists, Sets, Maps, and their implementations
