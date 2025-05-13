@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a4f35e5f-cce6-40d0-9e62-a7bb6940cef5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/AugmentWebviewStateStore.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/JAVA_DEVELOPER_INTERVIEW.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/AdvancedJava/AdvancedJavaInterviewQuestions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/AdvancedJava/Annotations.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/AdvancedJava/Concurrency.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/AdvancedJava/Generics.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/AdvancedJava/LambdaStreams.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/AdvancedJava/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/AdvancedJava/Reflection.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CodingQuestions/Arrays/MaximumSubarray.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CodingQuestions/Arrays/TwoSum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CodingQuestions/CoreJavaOOP/CountCharacters.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CodingQuestions/CoreJavaOOP/EncapsulationAndAccessModifiers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CodingQuestions/CoreJavaOOP/EqualsHashCode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CodingQuestions/CoreJavaOOP/EqualsVsDoubleEquals.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CodingQuestions/CoreJavaOOP/ImmutableClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CodingQuestions/CoreJavaOOP/InterfaceVsAbstractClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CodingQuestions/CoreJavaOOP/JavaCloning.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CodingQuestions/CoreJavaOOP/OverloadingVsOverriding.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CodingQuestions/CoreJavaOOP/PalindromeCheck.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CodingQuestions/CoreJavaOOP/PrintPatterns.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CodingQuestions/CoreJavaOOP/RemoveDuplicateChars.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CodingQuestions/CoreJavaOOP/ReverseString.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CodingQuestions/CoreJavaOOP/SingletonClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CodingQuestions/CoreJavaOOP/SwapNumbers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CodingQuestions/CoreJavaOOP/ThisAndSuper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CodingQuestions/LinkedList/DetectCycleInLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CodingQuestions/LinkedList/ReverseLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CodingQuestions/String/LongestSubstringWithoutRepeatingCharacters.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CoreJava/AdvancedMultithreading.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CoreJava/Collections.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CoreJava/ExceptionHandling.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CoreJava/JavaBasics.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CoreJava/JavaIO.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CoreJava/Multithreading.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CoreJava/OOPConcepts.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CoreJava/Q16-CompletableFuture.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CoreJava/Q17-ForkJoinPool.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/CoreJava/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/DataStructuresAndAlgorithms/ArraysStrings.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/DataStructuresAndAlgorithms/DSAInterviewQuestions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/DataStructuresAndAlgorithms/HashTables.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/DataStructuresAndAlgorithms/LinkedLists.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/DataStructuresAndAlgorithms/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/DataStructuresAndAlgorithms/StacksQueues.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/DataStructuresAndAlgorithms/TreesGraphs.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/DataStructuresAndAlgorithms/problem-solving-patterns.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/JAVA DSA INTERVIEW.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/JavaInterviewQuestionsIndex.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/Microservices/MicroservicesInterviewQuestions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/MockInterviews/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/MySqlAndDatabase/mySql.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/Practical_Coding_Problems.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/RabbitMQ/RabbitMQ_Interview_Questions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/Spring/spring-best-practices.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/Spring/spring-coding-questions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/Spring/spring-debugging-questions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/Spring/spring-misc-question.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/Spring/spring-performance-questions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/Spring/spring-scenario-questions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/Spring/spring-security-questions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/Spring/spring-testing-questions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/Spring/spring-theory-questions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/SystemDesign/NovoRemitAll-Implementation-Challenges.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/SystemDesign/NovoRemitAll-Part1-Overview-Role.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/SystemDesign/NovoRemitAll-Part2A-System-Architecture.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/SystemDesign/NovoRemitAll-Part3-Team-Conflicts.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/SystemDesign/NovoRemitAll-Part4-Data-Strategy.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/SystemDesign/NovoRemitAll-README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/SystemDesign/NovoRemitAll-Resources.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/SystemDesign/NovoRemitAll-User-Journey.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/SystemDesign/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/SystemDesign/enhanced-transaction-flow.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/System_Design_Questions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/Tricky_Interview_Questions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/out/production/JAVA DSA INTERVIEW/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/out/production/JAVA DSA INTERVIEW/.idea/JAVA DSA INTERVIEW.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/out/production/JAVA DSA INTERVIEW/.idea/material_theme_project_new.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/out/production/JAVA DSA INTERVIEW/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/out/production/JAVA DSA INTERVIEW/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/out/production/JAVA DSA INTERVIEW/AdvancedJava/AdvancedJavaInterviewQuestions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/out/production/JAVA DSA INTERVIEW/CodingQuestions/Arrays/MaximumSubarray.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/out/production/JAVA DSA INTERVIEW/CodingQuestions/Arrays/TwoSum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/out/production/JAVA DSA INTERVIEW/CodingQuestions/CodingQuestionsIndex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/out/production/JAVA DSA INTERVIEW/CodingQuestions/LinkedList/DetectCycleInLinkedList$ListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/out/production/JAVA DSA INTERVIEW/CodingQuestions/LinkedList/DetectCycleInLinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/out/production/JAVA DSA INTERVIEW/CodingQuestions/LinkedList/ReverseLinkedList$ListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/out/production/JAVA DSA INTERVIEW/CodingQuestions/LinkedList/ReverseLinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/out/production/JAVA DSA INTERVIEW/CodingQuestions/String/LongestSubstringWithoutRepeatingCharacters.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/out/production/JAVA DSA INTERVIEW/CoreJava/CoreJavaInterviewQuestions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/out/production/JAVA DSA INTERVIEW/DataStructuresAndAlgorithms/DSAInterviewQuestions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/out/production/JAVA DSA INTERVIEW/DataStructuresAndAlgorithms/TwoSum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/out/production/JAVA DSA INTERVIEW/JavaInterviewQuestionsIndex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/out/production/JAVA DSA INTERVIEW/Microservices/MicroservicesInterviewQuestions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA DSA INTERVIEW/out/production/JAVA DSA INTERVIEW/README.md" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Kamleshstable&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/kamkode/java-system-design-prep.git&quot;,
+    &quot;accountId&quot;: &quot;7e81b9ac-93b3-4961-9cf2-eacd523555fe&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2x0DuExFASl1Qv1pYLp1fQjgE8K" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Kamlesh/Downloads/Telegram Desktop/JAVA_DEVELOPER_INTERVIEW&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a4f35e5f-cce6-40d0-9e62-a7bb6940cef5" name="Changes" comment="" />
+      <created>1747066319043</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1747066319043</updated>
+      <workItem from="1747066321725" duration="4901000" />
+      <workItem from="1747104069740" duration="1309000" />
+      <workItem from="1747114741587" duration="492000" />
+      <workItem from="1747115257452" duration="12043000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
