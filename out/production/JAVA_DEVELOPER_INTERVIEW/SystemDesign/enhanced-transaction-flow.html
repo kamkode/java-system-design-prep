@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovoRemitAll - Enterprise Transaction Flow</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0066cc;
+            --primary-light: #3399ff;
+            --primary-dark: #004080;
+            --secondary: #6633cc;
+            --secondary-light: #9966ff;
+            --secondary-dark: #330066;
+            --success: #00b359;
+            --success-light: #00e673;
+            --success-dark: #008040;
+            --warning: #e6b800;
+            --warning-light: #ffcc00;
+            --warning-dark: #b38f00;
+            --danger: #cc3333;
+            --danger-light: #ff6666;
+            --danger-dark: #990000;
+            --info: #0099cc;
+            --info-light: #33ccff;
+            --info-dark: #006699;
+            --dark: #1a1a2e;
+            --light: #f0f7ff;
+            --gray-100: #f8f9fa;
+            --gray-200: #e9ecef;
+            --gray-300: #dee2e6;
+            --gray-400: #ced4da;
+            --gray-500: #adb5bd;
+            --gray-600: #6c757d;
+            --gray-700: #495057;
+            --gray-800: #343a40;
+            --gray-900: #212529;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.2);
+            --border-radius-sm: 4px;
+            --border-radius-md: 8px;
+            --border-radius-lg: 12px;
+            --border-radius-xl: 16px;
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+
+        [data-theme="dark"] {
+            --bg: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --card-bg: rgba(30, 41, 59, 0.8);
+            --text: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --border: rgba(255, 255, 255, 0.1);
+            --component-bg: linear-gradient(145deg, #1e293b, #334155);
+            --component-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+            --panel-bg: rgba(15, 23, 42, 0.8);
+        }
+
+        [data-theme="light"] {
+            --bg: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --text: #0f172a;
+            --text-secondary: #334155;
+            --border: rgba(0, 0, 0, 0.1);
+            --component-bg: linear-gradient(145deg, #ffffff, #f1f5f9);
+            --component-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            --panel-bg: rgba(255, 255, 255, 0.9);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 30%, rgba(0, 102, 204, 0.15) 0%, transparent 70%);
+            animation: pulse-bg 15s infinite ease-in-out;
+            z-index: -1;
+        }
+
+        @keyframes pulse-bg {
+            0%, 100% { transform: scale(1); opacity: 0.2; }
+            50% { transform: scale(1.1); opacity: 0.3; }
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            margin-right: 10px;
+            color: var(--primary);
+            background: linear-gradient(45deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+            background: linear-gradient(45deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 10px;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
+
+        .control-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 0 5px;
+        }
+
+        button, .control-input {
+            padding: 10px 16px;
+            border: none;
+            border-radius: var(--border-radius-md);
+            background: var(--component-bg);
+            color: var(--text);
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: var(--shadow-md);
+            min-height: 44px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary-light), var(--primary));
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+            z-index: -1;
+        }
+
+        button:hover::before, button:focus::before {
+            opacity: 0.15;
+        }
+
+        button:hover, button:focus, .control-input:hover, .control-input:focus {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        button:active {
+            transform: translateY(1px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        button i, .btn-icon {
+            font-size: 1.1em;
+        }
+
+        #startBtn { border-left: 4px solid var(--success); }
+        #pauseBtn { border-left: 4px solid var(--secondary); }
+        #resetBtn { border-left: 4px solid var(--danger); }
+        #themeToggle { border-left: 4px solid var(--info); }
+        #stepBtn { border-left: 4px solid var(--warning); }
+        #tutorialBtn { border-left: 4px solid var(--primary); }
+        #exportBtn { border-left: 4px solid var(--gray-600); }
+
+        .control-input {
+            background: var(--component-bg);
+            border-left: 4px solid var(--primary-light);
+        }
+
+        #speedSlider {
+            padding: 8px 16px;
+            accent-color: var(--primary);
+        }
+
+        #animation-container {
+            width: 100%;
+            min-height: 800px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            margin: 0 auto;
+            max-width: 1800px;
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+        }
+
+        .component {
+            position: absolute;
+            width: 180px;
+            height: 120px;
+            padding: 16px;
+            background: var(--component-bg);
+            color: var(--text);
+            text-align: center;
+            border-radius: var(--border-radius-lg);
+            font-weight: 500;
+            font-size: 0.95rem;
+            box-shadow: var(--component-shadow);
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            border: 1px solid var(--border);
+        }
+
+        /* Component type styling */
+        .sender-component, .recipient-component {
+            background: linear-gradient(145deg, #2563eb, #3b82f6);
+            color: white;
+            border: none;
+        }
+
+        .frontend-component {
+            background: linear-gradient(145deg, #8b5cf6, #a78bfa);
+            color: white;
+            border: none;
+        }
+
+        .api-component, .auth-component {
+            background: linear-gradient(145deg, #10b981, #34d399);
+            color: white;
+            border: none;
+        }
+
+        .txn-component, .compliance-component {
+            background: linear-gradient(145deg, #f59e0b, #fbbf24);
+            color: white;
+            border: none;
+        }
+
+        .db-component, .bank-component {
+            background: linear-gradient(145deg, #ef4444, #f87171);
+            color: white;
+            border: none;
+        }
+
+        /* Connection lines between components */
+        .connection-line {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.15);
+            height: 2px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .component:hover, .component:focus {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 102, 204, 0.2);
+        }
+
+        .component .icon {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+            background: linear-gradient(45deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulse-icon 3s infinite ease-in-out;
+        }
+
+        @keyframes pulse-icon {
+            0%, 100% { transform: scale(1); text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+            50% { transform: scale(1.1); text-shadow: 0 0 20px rgba(0, 240, 255, 0.8); }
+        }
+
+        .pulse {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background: var(--success-light);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 10;
+            box-shadow: 0 0 20px var(--success-light);
+            will-change: transform, opacity;
+            filter: blur(1px);
+        }
+
+        .status {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text);
+            background: var(--panel-bg);
+            padding: 12px 20px;
+            border-radius: var(--border-radius-md);
+            border-left: 4px solid var(--primary);
+            box-shadow: var(--shadow-lg);
+            max-width: 90%;
+            z-index: 3;
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status::before {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: var(--success);
+            border-radius: 50%;
+            animation: status-pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes status-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
+
+        .timeline {
+            position: absolute;
+            background: rgba(var(--border), 0.2);
+            border-radius: var(--border-radius-md);
+            z-index: 1;
+            overflow: hidden;
+            backdrop-filter: blur(2px);
+        }
+
+        .timeline-marker {
+            position: absolute;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 0 15px rgba(0, 102, 204, 0.4);
+            transition: all 0.4s ease;
+        }
+
+        .tooltip {
+            position: absolute;
+            background: var(--panel-bg);
+            color: var(--text);
+            padding: 12px 16px;
+            border-radius: var(--border-radius-md);
+            font-size: 0.85rem;
+            box-shadow: var(--shadow-lg);
+            z-index: 4;
+            display: none;
+            max-width: 250px;
+            pointer-events: none;
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border);
+            line-height: 1.5;
+        }
+
+        #customization-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--panel-bg);
+            padding: 20px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+            z-index: 5;
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border);
+            max-width: 300px;
+        }
+
+        #customization-panel h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+
+        #customization-panel label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        #color-picker {
+            width: 100%;
+            height: 40px;
+            border: none;
+            border-radius: var(--border-radius-sm);
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+        #apply-customization {
+            width: 100%;
+            padding: 10px;
+            border-radius: var(--border-radius-md);
+            background: var(--primary);
+            color: white;
+            border: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+
+        #apply-customization:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        #auth-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--panel-bg);
+            padding: 30px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-xl);
+            z-index: 6;
+            display: none;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        #auth-modal h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        #auth-modal input {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius-md);
+            background: var(--card-bg);
+            color: var(--text);
+            font-size: 1rem;
+        }
+
+        #login-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius-md);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            margin-top: 10px;
+        }
+
+        #login-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            #animation-container {
+                min-height: 1200px;
+                padding: 30px 10px 120px;
+            }
+
+            .header {
+                padding: 0 10px;
+            }
+
+            .logo {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo-icon {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+                padding: 0 10px;
+            }
+
+            .timeline {
+                top: 50%;
+                left: 20px;
+                width: 8px;
+                height: calc(100% - 150px);
+                transform: translateY(-50%);
+            }
+
+            .timeline-marker {
+                width: 100%;
+                height: 0%;
+                top: 0;
+                left: 0;
+                transform: scaleY(0);
+                transform-origin: top;
+            }
+
+            .component {
+                width: calc(100% - 60px);
+                max-width: 300px;
+                height: auto;
+                min-height: 90px;
+                left: 50% !important;
+                transform: translateX(-50%);
+                font-size: 0.9rem;
+                padding: 15px;
+            }
+
+            .component .icon {
+                font-size: 1.8rem;
+                margin-bottom: 8px;
+            }
+
+            #user { top: 60px; }
+            #frontend { top: 170px; }
+            #api { top: 280px; }
+            #auth { top: 390px; }
+            #txn { top: 500px; }
+            #compliance { top: 610px; }
+            #db { top: 720px; }
+            #bank { top: 830px; }
+
+            .controls {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .control-group {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            button, .control-input {
+                width: 100%;
+                padding: 12px;
+                justify-content: center;
+            }
+
+            h1 {
+                font-size: 1.3rem;
+                text-align: center;
+            }
+
+            .status {
+                font-size: 0.85rem;
+                bottom: 10px;
+                left: 10px;
+                right: 10px;
+                max-width: none;
+            }
+
+            #customization-panel {
+                position: static;
+                margin: 20px auto;
+                width: calc(100% - 20px);
+                max-width: 300px;
+            }
+
+            #auth-modal {
+                width: calc(100% - 40px);
+                padding: 20px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .timeline {
+                top: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                height: 10px;
+            }
+
+            .timeline-marker {
+                width: 0%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                transform: scaleX(0);
+                transform-origin: left;
+            }
+
+            .component {
+                width: 150px;
+                height: 100px;
+                font-size: 0.85rem;
+            }
+
+            .component .icon {
+                font-size: 1.7rem;
+            }
+
+            .control-group {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            #customization-panel {
+                top: auto;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .timeline {
+                top: 40px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 95%;
+                height: 12px;
+            }
+
+            .timeline-marker {
+                width: 0%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                transform: scaleX(0);
+                transform-origin: left;
+            }
+
+            .component {
+                transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            }
+
+            .component:hover {
+                transform: translateY(-8px) scale(1.05);
+                z-index: 10;
+            }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+<div class="header">
+    <div class="logo">
+        <i class="logo-icon fas fa-exchange-alt"></i>
+        <h1>NovoRemitAll Enterprise Transaction Flow</h1>
+    </div>
+    <p class="subtitle">Secure Cross-Border Remittance System Architecture Visualization</p>
+</div>
+
+<div class="controls">
+    <div class="control-group">
+        <button id="startBtn" aria-label="Start transaction flow"><i class="fas fa-play"></i> Start Flow</button>
+        <button id="pauseBtn" aria-label="Pause or resume flow" disabled><i class="fas fa-pause"></i> Pause</button>
+        <button id="stepBtn" aria-label="Step through flow"><i class="fas fa-step-forward"></i> Step Through</button>
+    </div>
+    <div class="control-group">
+        <button id="resetBtn" aria-label="Reset flow"><i class="fas fa-redo-alt"></i> Reset</button>
+        <button id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon"></i> Toggle Theme</button>
+        <button id="tutorialBtn" aria-label="Tutorial mode"><i class="fas fa-book"></i> Tutorial</button>
+    </div>
+    <div class="control-group">
+        <button id="exportBtn" aria-label="Export animation"><i class="fas fa-file-export"></i> Export</button>
+        <div class="control-input">
+            <label for="speedSlider" style="margin-right: 8px;">Speed:</label>
+            <input type="range" id="speedSlider" min="0.5" max="2" step="0.1" value="1" aria-label="Adjust animation speed">
+        </div>
+    </div>
+</div>
+
+<div id="animation-container">
+    <div class="timeline">
+        <div class="timeline-marker" id="timelineMarker"></div>
+    </div>
+
+    <!-- Connection Lines -->
+    <div class="connection-line" id="line-user-frontend"></div>
+    <div class="connection-line" id="line-frontend-api"></div>
+    <div class="connection-line" id="line-api-auth"></div>
+    <div class="connection-line" id="line-api-txn"></div>
+    <div class="connection-line" id="line-txn-compliance"></div>
+    <div class="connection-line" id="line-txn-db"></div>
+    <div class="connection-line" id="line-txn-bank"></div>
+    <div class="connection-line" id="line-bank-receiver"></div>
+
+    <!-- User Layer -->
+    <div class="component sender-component" id="user" style="top: 100px; left: 5%;" data-tooltip="Sender initiates the cross-border transfer. The customer enters recipient details, amount, and selects currencies.">
+        <div class="icon"><i class="fas fa-user"></i></div>
+        <div>Sender</div>
+    </div>
+    <div class="component recipient-component" id="receiver" style="top: 100px; left: 90%;" data-tooltip="Recipient of the funds. The beneficiary who will receive the money in their local currency.">
+        <div class="icon"><i class="fas fa-users"></i></div>
+        <div>Recipient</div>
+    </div>
+
+    <!-- Frontend Layer -->
+    <div class="component frontend-component" id="frontend" style="top: 220px; left: 15%;" data-tooltip="User interface for transaction initiation. Validates input, calculates preliminary fees, and provides real-time exchange rates.">
+        <div class="icon"><i class="fas fa-desktop"></i></div>
+        <div>Frontend App</div>
+    </div>
+
+    <!-- API & Middleware Layer -->
+    <div class="component api-component" id="api" style="top: 220px; left: 35%;" data-tooltip="Central routing layer. Secures and directs API requests to appropriate microservices while handling authentication and rate limiting.">
+        <div class="icon"><i class="fas fa-network-wired"></i></div>
+        <div>API Gateway</div>
+    </div>
+    <div class="component auth-component" id="auth" style="top: 340px; left: 35%;" data-tooltip="Security microservice. Implements multi-factor authentication, JWT token validation, and role-based access control.">
+        <div class="icon"><i class="fas fa-shield-alt"></i></div>
+        <div>Auth Service</div>
+    </div>
+
+    <!-- Core Services Layer -->
+    <div class="component txn-component" id="txn" style="top: 220px; left: 55%;" data-tooltip="Core transaction engine. Orchestrates the entire remittance process, calculates fees, and manages the transaction lifecycle.">
+        <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+        <div>Transaction Service</div>
+    </div>
+    <div class="component compliance-component" id="compliance" style="top: 460px; left: 35%;" data-tooltip="Regulatory compliance engine. Performs AML/KYC checks, sanctions screening, and ensures adherence to international regulations.">
+        <div class="icon"><i class="fas fa-balance-scale"></i></div>
+        <div>Compliance Service</div>
+    </div>
+
+    <!-- Data & Integration Layer -->
+    <div class="component db-component" id="db" style="top: 340px; left: 55%;" data-tooltip="Distributed data storage. Maintains transaction records, audit trails, and ensures data consistency across microservices.">
+        <div class="icon"><i class="fas fa-database"></i></div>
+        <div>Database</div>
+    </div>
+    <div class="component bank-component" id="bank" style="top: 220px; left: 75%;" data-tooltip="Banking integration layer. Connects with global banking networks to process the actual funds transfer securely and efficiently.">
+        <div class="icon"><i class="fas fa-university"></i></div>
+        <div>Banking API</div>
+    </div>
+
+    <div class="status" id="status" role="status">Status: Ready to process transaction</div>
+    <div class="tooltip" id="tooltip"></div>
+</div>
+
+<div id="customization-panel">
+    <h2>Customize Animation</h2>
+    <label for="color-picker">Primary Color:</label>
+    <input type="color" id="color-picker" value="#00f0ff">
+    <button id="apply-customization">Apply</button>
+</div>
+
+<div id="auth-modal">
+    <h2>User Authentication</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button id="login-btn">Login</button>
+</div>
+
+<script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    let isDark = true;
+
+    themeToggle.addEventListener('click', () => {
+        isDark = !isDark;
+        body.setAttribute('data-theme', isDark ? 'dark' : 'light');
+    });
+
+    // Animation Setup
+    const startBtn = document.getElementById('startBtn');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const stepBtn = document.getElementById('stepBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const speedSlider = document.getElementById('speedSlider');
+    const statusEl = document.getElementById('status');
+    const tooltip = document.getElementById('tooltip');
+    const container = document.getElementById('animation-container');
+    const timelineMarker = document.getElementById('timelineMarker');
+    const flashSound = document.getElementById('flash-sound');
+    const tutorialBtn = document.getElementById('tutorialBtn');
+    const exportBtn = document.getElementById('exportBtn');
+
+    const components = {
+        user: document.getElementById('user'),
+        receiver: document.getElementById('receiver'),
+        frontend: document.getElementById('frontend'),
+        api: document.getElementById('api'),
+        auth: document.getElementById('auth'),
+        txn: document.getElementById('txn'),
+        compliance: document.getElementById('compliance'),
+        db: document.getElementById('db'),
+        bank: document.getElementById('bank')
+    };
+
+    let timeline = gsap.timeline({paused: true, onComplete: onComplete});
+    let currentStep = 0;
+    let isPaused = false;
+    let tutorialMode = false;
+    const steps = [];
+
+    function defineFlow() {
+        steps.length = 0;
+        timeline.clear();
+
+        addStep('user', 'frontend', 'Initiate cross-border transfer', 0, 'Customer initiates a remittance transaction through the NovoRemitAll platform');
+        highlightComponent('user', 0);
+
+        addStep('frontend', 'frontend', 'Validating transfer details...', 1, 'Frontend validates recipient information, amount, and currency selection');
+
+        addStep('frontend', 'api', 'Routing to secure gateway', 2, 'Request is encrypted and sent to the API Gateway with transaction metadata');
+        highlightComponent('frontend', 2);
+
+        addStep('api', 'auth', 'Authenticating & authorizing request', 3, 'API Gateway forwards request to Auth Service for validation');
+        highlightComponent('api', 3);
+
+        addStep('auth', 'auth', 'Performing multi-factor authentication', 4, 'Auth Service verifies user identity and permissions using JWT tokens');
+
+        addStep('auth', 'api', 'Identity verified successfully', 5, 'Auth Service confirms user has permission to initiate transfers');
+
+        addStep('api', 'compliance', 'Performing compliance checks', 6, 'API Gateway routes authenticated request to Compliance Service');
+        highlightComponent('compliance', 6);
+
+        addStep('compliance', 'compliance', 'Screening against sanctions lists', 7, 'Compliance Service checks against OFAC and other global watchlists');
+
+        addStep('compliance', 'db', 'Persisting transaction record', 8, 'Transaction details are saved to secure database with audit trail');
+        highlightComponent('db', 8);
+
+        addStep('db', 'bank', 'Initiating funds transfer', 9, 'Secure payment instruction sent to banking partner API');
+        highlightComponent('bank', 9);
+
+        addStep('bank', 'bank', 'Processing international transfer', 10, 'Bank processes the cross-border payment through SWIFT/SEPA network');
+
+        addStep('bank', 'db', 'Transfer confirmation received', 11, 'Banking partner confirms successful payment initiation');
+
+        addStep('db', 'api', 'Updating transaction status', 12, 'Database updated with confirmation details and settlement status');
+
+        addStep('api', 'frontend', 'Generating transfer receipt', 13, 'API Gateway forwards confirmation to frontend application');
+
+        addStep('frontend', 'user', 'Sending confirmation to sender', 14, 'Customer receives confirmation with tracking information');
+
+        addStep('bank', 'receiver', 'Funds delivered to recipient', 15, 'Recipient is notified and can access the transferred funds');
+
+        const markerProp = window.innerWidth <= 600 ? 'scaleY' : 'scaleX';
+        timeline.to(timelineMarker, {[markerProp]: 1, duration: steps.length * 0.3, ease: 'power1.inOut'}, 0);
+    }
+
+    function addStep(fromId, toId, message, step, tooltipText) {
+        steps[step] = {from: fromId, to: toId, message, tooltipText};
+        const from = components[fromId];
+        const to = components[toId];
+
+        const particle = createParticle(from, to, step * 0.3);
+        timeline.call(updateStatus, [message], step * 0.3);
+
+        if (fromId !== toId) {
+            timeline.call(flashComponent, [from], step * 0.3);
+            timeline.call(flashComponent, [to], (step * 0.3) + 0.15);
+        } else {
+            timeline.call(pulseComponent, [from], step * 0.3);
+        }
+    }
+
+    // Initialize connection lines between components
+    function initializeConnectionLines() {
+        // Set up connection lines between components
+        setupConnectionLine('line-user-frontend', 'user', 'frontend');
+        setupConnectionLine('line-frontend-api', 'frontend', 'api');
+        setupConnectionLine('line-api-auth', 'api', 'auth');
+        setupConnectionLine('line-api-txn', 'api', 'txn');
+        setupConnectionLine('line-txn-compliance', 'txn', 'compliance');
+        setupConnectionLine('line-txn-db', 'txn', 'db');
+        setupConnectionLine('line-txn-bank', 'txn', 'bank');
+        setupConnectionLine('line-bank-receiver', 'bank', 'receiver');
+    }
+
+    function setupConnectionLine(lineId, fromId, toId) {
+        const line = document.getElementById(lineId);
+        const from = components[fromId];
+        const to = components[toId];
+
+        if (!line || !from || !to) return;
+
+        const containerRect = container.getBoundingClientRect();
+        const fromRect = from.getBoundingClientRect();
+        const toRect = to.getBoundingClientRect();
+
+        const fromX = fromRect.left + fromRect.width/2 - containerRect.left;
+        const fromY = fromRect.top + fromRect.height/2 - containerRect.top;
+        const toX = toRect.left + toRect.width/2 - containerRect.left;
+        const toY = toRect.top + toRect.height/2 - containerRect.top;
+
+        // Calculate angle and length
+        const angle = Math.atan2(toY - fromY, toX - fromX) * 180 / Math.PI;
+        const length = Math.sqrt(Math.pow(toX - fromX, 2) + Math.pow(toY - fromY, 2));
+
+        // Position and rotate the line
+        gsap.set(line, {
+            left: fromX,
+            top: fromY,
+            width: length,
+            rotation: angle,
+            transformOrigin: '0 0'
+        });
+    }
+
+    function createParticle(from, to, delay) {
+        const particle = document.createElement('div');
+        particle.className = 'pulse';
+        container.appendChild(particle);
+
+        const containerRect = container.getBoundingClientRect();
+        const fromRect = from.getBoundingClientRect();
+        const toRect = to.getBoundingClientRect();
+
+        const startX = fromRect.left + fromRect.width/2 - containerRect.left;
+        const startY = fromRect.top + fromRect.height/2 - containerRect.top;
+        const endX = toRect.left + toRect.width/2 - containerRect.left;
+        const endY = toRect.top + toRect.height/2 - containerRect.top;
+
+        gsap.set(particle, {left: startX, top: startY});
+
+        timeline.to(particle, {
+            left: endX,
+            top: endY,
+            opacity: 1,
+            scale: 1.4,
+            duration: 0.5 / speedSlider.value,
+            ease: 'power3.inOut',
+            onComplete: () => particle.remove()
+        }, delay);
+
+        for (let i = 1; i <= 2; i++) {
+            const trail = document.createElement('div');
+            trail.className = 'pulse';
+            container.appendChild(trail);
+            gsap.set(trail, {left: startX, top: startY, scale: 0.8 - i * 0.2, opacity: 0.5});
+            timeline.to(trail, {
+                left: endX,
+                top: endY,
+                opacity: 0,
+                duration: (0.5 / speedSlider.value) * (1 - i * 0.2),
+                ease: 'power2.out',
+                delay: i * 0.05,
+                onComplete: () => trail.remove()
+            }, delay);
+        }
+
+        return particle;
+    }
+
+    function updateStatus(message) {
+        gsap.to(statusEl, {opacity: 0, duration: 0.15, onComplete: () => {
+                statusEl.textContent = `Status: ${message} (Step ${currentStep + 1}/${steps.length})`;
+                gsap.to(statusEl, {opacity: 1, x: 0, duration: 0.15});
+            }});
+    }
+
+    function flashComponent(component) {
+        try {
+            flashSound.currentTime = 0;
+            const playPromise = flashSound.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.warn('Audio play failed:', error);
+                });
+            }
+        } catch (e) {
+            console.warn('Audio error:', e);
+        }
+
+        gsap.to(component, {
+            scale: 1.12,
+            boxShadow: '0 0 50px rgba(0, 102, 204, 0.8)',
+            rotation: 2,
+            duration: 0.25 / speedSlider.value,
+            yoyo: true,
+            repeat: 1,
+            ease: 'power2.out'
+        });
+    }
+
+    function pulseComponent(component) {
+        gsap.to(component, {
+            scale: 1.1,
+            duration: 0.2 / speedSlider.value,
+            yoyo: true,
+            repeat: 1
+        });
+    }
+
+    function highlightComponent(componentId, step) {
+        const component = components[componentId];
+        timeline.to(component, {
+            boxShadow: '0 0 50px rgba(0, 179, 89, 0.8)',
+            scale: 1.08,
+            duration: 0.3 / speedSlider.value,
+            ease: 'power1.out'
+        }, step * 0.3);
+
+        const tl = gsap.timeline();
+        tl.to(component, {
+            boxShadow: '0 0 30px rgba(0, 179, 89, 0.4)',
+            scale: 1.04,
+            duration: 1.5,
+            ease: 'sine.inOut',
+            repeat: -1,
+            yoyo: true
+        });
+
+        component._glowTimeline = tl;
+
+        Object.values(components).forEach(comp => {
+            if (comp !== component && comp._glowTimeline) {
+                comp._glowTimeline.kill();
+                gsap.to(comp, {
+                    boxShadow: 'var(--component-shadow)',
+                    scale: 1,
+                    duration: 0.3
+                });
+            }
+        });
+    }
+
+    function onComplete() {
+        startBtn.disabled = false;
+        stepBtn.disabled = false;
+        pauseBtn.disabled = true;
+        startBtn.textContent = '🔄 Restart Flow';
+        pauseBtn.textContent = '⏸️ Pause';
+        statusEl.textContent = 'Status: Transaction flow completed!';
+        isPaused = false;
+    }
+
+    function showTooltip(comp, x, y) {
+        tooltip.textContent = comp.dataset.tooltip;
+        const containerRect = container.getBoundingClientRect();
+        let left = x - containerRect.left;
+        let top = y - containerRect.top - 40;
+
+        const tooltipRect = tooltip.getBoundingClientRect();
+        if (left + tooltipRect.width > containerRect.width) {
+            left = containerRect.width - tooltipRect.width - 10;
+        }
+        if (left < 0) left = 10;
+        if (top < 0) top = y - containerRect.top + 20;
+
+        gsap.set(tooltip, {
+            display: 'block',
+            left,
+            top,
+            x: 0
+        });
+        gsap.to(tooltip, {opacity: 1, duration: 0.2});
+    }
+
+    function hideTooltip() {
+        gsap.to(tooltip, {opacity: 0, duration: 0.2, onComplete: () => {
+                tooltip.style.display = 'none';
+            }});
+    }
+
+    Object.values(components).forEach(comp => {
+        comp.addEventListener('mouseenter', (e) => {
+            const rect = comp.getBoundingClientRect();
+            showTooltip(comp, rect.left + rect.width / 2, rect.top);
+        });
+
+        comp.addEventListener('mouseleave', hideTooltip);
+
+        comp.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            const touch = e.touches[0];
+            showTooltip(comp, touch.clientX, touch.clientY);
+            setTimeout(hideTooltip, 2000);
+        });
+    });
+
+    let touchStartY = 0;
+    container.addEventListener('touchstart', (e) => {
+        touchStartY = e.touches[0].clientY;
+    }, {passive: true});
+
+    container.addEventListener('touchend', (e) => {
+        const touchEndY = e.changedTouches[0].clientY;
+        if (touchEndY < touchStartY - 100 && currentStep < steps.length) {
+            stepBtn.click();
+        } else if (touchEndY > touchStartY + 100 && currentStep > 0) {
+            currentStep = Math.max(0, currentStep - 1);
+            stepBtn.click();
+        }
+    }, {passive: true});
+
+    speedSlider.addEventListener('input', () => {
+        timeline.timeScale(speedSlider.value);
+    });
+
+    startBtn.addEventListener('click', () => {
+        startBtn.disabled = true;
+        pauseBtn.disabled = false;
+        stepBtn.disabled = true;
+        timeline.play(0);
+    });
+
+    pauseBtn.addEventListener('click', () => {
+        if (isPaused) {
+            timeline.play();
+            pauseBtn.textContent = '⏸️ Pause';
+            updateStatus(steps[currentStep]?.message || 'Resuming...');
+        } else {
+            timeline.pause();
+            pauseBtn.textContent = '▶️ Resume';
+            statusEl.textContent = 'Status: Paused';
+        }
+        isPaused = !isPaused;
+    });
+
+    stepBtn.addEventListener('click', () => {
+        if (currentStep < steps.length) {
+            const step = steps[currentStep];
+            updateStatus(step.message);
+
+            const from = components[step.from];
+            const to = components[step.to];
+
+            if (step.from !== step.to) {
+                flashComponent(from);
+                flashComponent(to);
+                createParticle(from, to, 0);
+            } else {
+                pulseComponent(from);
+            }
+
+            const markerProp = window.innerWidth <= 600 ? 'scaleY' : 'scaleX';
+            gsap.to(timelineMarker, {
+                [markerProp]: (currentStep / steps.length),
+                duration: 0.3
+            });
+
+            currentStep++;
+
+            if (currentStep >= steps.length) {
+                stepBtn.disabled = true;
+                pauseBtn.disabled = true;
+            }
+        }
+    });
+
+    resetBtn.addEventListener('click', () => {
+        timeline.pause(0);
+        timeline.progress(0);
+        currentStep = 0;
+        statusEl.textContent = 'Status: Ready';
+        startBtn.disabled = false;
+        pauseBtn.disabled = true;
+        stepBtn.disabled = false;
+        startBtn.textContent = '▶️ Start Flow';
+        pauseBtn.textContent = '⏸️ Pause';
+        document.querySelectorAll('.pulse').forEach(el => el.remove());
+        gsap.set(timelineMarker, {scaleX: 0, scaleY: 0});
+        isPaused = false;
+
+        Object.values(components).forEach(comp => {
+            gsap.set(comp, {scale: 1, boxShadow: '0 8px 25px rgba(0, 0, 0, 0.5)', rotation: 0});
+        });
+    });
+
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            const currentProgress = timeline.progress();
+            const wasPaused = isPaused || timeline.paused();
+
+            timeline.pause();
+            timeline.clear();
+            steps.length = 0;
+            defineFlow();
+
+            if (!wasPaused) {
+                timeline.progress(currentProgress);
+                timeline.play();
+            }
+
+            updateComponentPositions();
+        }, 200);
+    });
+
+    function updateComponentPositions() {
+        if (window.innerWidth <= 600) {
+            gsap.set(components.user, { top: '60px', left: '50%', x: '-50%' });
+            gsap.set(components.receiver, { top: '140px', left: '50%', x: '-50%' });
+            gsap.set(components.frontend, { top: '220px', left: '50%', x: '-50%' });
+            gsap.set(components.api, { top: '300px', left: '50%', x: '-50%' });
+            gsap.set(components.auth, { top: '380px', left: '50%', x: '-50%' });
+            gsap.set(components.txn, { top: '460px', left: '50%', x: '-50%' });
+            gsap.set(components.compliance, { top: '540px', left: '50%', x: '-50%' });
+            gsap.set(components.db, { top: '620px', left: '50%', x: '-50%' });
+            gsap.set(components.bank, { top: '700px', left: '50%', x: '-50%' });
+        } else if (window.innerWidth <= 1024) {
+            gsap.set(components.user, { top: '80px', left: '10%', x: '0%' });
+            gsap.set(components.receiver, { top: '80px', left: '80%', x: '0%' });
+            gsap.set(components.frontend, { top: '180px', left: '25%', x: '0%' });
+            gsap.set(components.api, { top: '180px', left: '50%', x: '0%' });
+            gsap.set(components.auth, { top: '280px', left: '25%', x: '0%' });
+            gsap.set(components.txn, { top: '280px', left: '50%', x: '0%' });
+            gsap.set(components.compliance, { top: '380px', left: '25%', x: '0%' });
+            gsap.set(components.db, { top: '380px', left: '50%', x: '0%' });
+            gsap.set(components.bank, { top: '180px', left: '75%', x: '0%' });
+        } else {
+            gsap.set(components.user, { top: '100px', left: '5%', x: '0%' });
+            gsap.set(components.receiver, { top: '100px', left: '90%', x: '0%' });
+            gsap.set(components.frontend, { top: '220px', left: '15%', x: '0%' });
+            gsap.set(components.api, { top: '220px', left: '35%', x: '0%' });
+            gsap.set(components.auth, { top: '340px', left: '35%', x: '0%' });
+            gsap.set(components.txn, { top: '220px', left: '55%', x: '0%' });
+            gsap.set(components.compliance, { top: '460px', left: '35%', x: '0%' });
+            gsap.set(components.db, { top: '340px', left: '55%', x: '0%' });
+            gsap.set(components.bank, { top: '220px', left: '75%', x: '0%' });
+        }
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !startBtn.disabled) startBtn.click();
+        if (e.key === ' ' && !stepBtn.disabled) stepBtn.click();
+        if (e.key === 'Escape' && !resetBtn.disabled) resetBtn.click();
+        if (e.key === 't') themeToggle.click();
+        if (e.key === 'p' && !pauseBtn.disabled) pauseBtn.click();
+    });
+
+    const colorPicker = document.getElementById('color-picker');
+    const applyCustomization = document.getElementById('apply-customization');
+
+    applyCustomization.addEventListener('click', () => {
+        const color = colorPicker.value;
+        const colorLight = adjustColor(color, 40);
+        const colorDark = adjustColor(color, -40);
+
+        document.documentElement.style.setProperty('--primary', color);
+        document.documentElement.style.setProperty('--primary-light', colorLight);
+        document.documentElement.style.setProperty('--primary-dark', colorDark);
+
+        statusEl.textContent = 'Status: Theme color updated successfully';
+    });
+
+    function adjustColor(color, amount) {
+        return '#' + color.replace(/^#/, '').replace(/../g, color => ('0' + Math.min(255, Math.max(0, parseInt(color, 16) + amount)).toString(16)).substr(-2));
+    }
+
+    tutorialBtn.addEventListener('click', () => {
+        tutorialMode = !tutorialMode;
+        if (tutorialMode) {
+            startTutorial();
+        } else {
+            endTutorial();
+        }
+    });
+
+    function startTutorial() {
+        const tutorialOverlay = document.createElement('div');
+        tutorialOverlay.id = 'tutorial-overlay';
+        tutorialOverlay.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.85);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(8px);
+        `;
+
+        tutorialOverlay.innerHTML = `
+            <div style="max-width: 800px; background: var(--panel-bg); padding: 30px; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-xl);">
+                <h2 style="margin-bottom: 20px; color: var(--primary); font-family: 'Montserrat', sans-serif; font-size: 1.8rem;">NovoRemitAll Enterprise Transaction Flow</h2>
+                <p style="margin-bottom: 20px; line-height: 1.6; color: var(--text-secondary);">This interactive visualization demonstrates how cross-border remittance transactions flow through the NovoRemitAll enterprise platform, highlighting our secure, compliant, and efficient process.</p>
+
+                <div style="text-align: left; margin-bottom: 25px; border-left: 3px solid var(--primary); padding-left: 20px;">
+                    <h3 style="margin-bottom: 15px; color: var(--primary-light); font-size: 1.2rem;">Key Features:</h3>
+                    <ul style="list-style-type: none; padding: 0;">
+                        <li style="margin-bottom: 10px; display: flex; align-items: center;"><span style="color: var(--primary); margin-right: 10px;">✓</span> Multi-layer security with advanced authentication</li>
+                        <li style="margin-bottom: 10px; display: flex; align-items: center;"><span style="color: var(--primary); margin-right: 10px;">✓</span> Comprehensive compliance screening against global regulations</li>
+                        <li style="margin-bottom: 10px; display: flex; align-items: center;"><span style="color: var(--primary); margin-right: 10px;">✓</span> Optimized fee structure with transparent exchange rates</li>
+                        <li style="margin-bottom: 10px; display: flex; align-items: center;"><span style="color: var(--primary); margin-right: 10px;">✓</span> Real-time transaction monitoring and status updates</li>
+                        <li style="display: flex; align-items: center;"><span style="color: var(--primary); margin-right: 10px;">✓</span> Secure integration with global banking partners</li>
+                    </ul>
+                </div>
+
+                <h3 style="margin-bottom: 15px; color: var(--primary-light); font-size: 1.2rem;">How to Use This Visualization:</h3>
+                <ol style="text-align: left; margin-bottom: 25px; padding-left: 20px;">
+                    <li style="margin-bottom: 10px;">Click <strong>Start Flow</strong> to watch the entire transaction process automatically</li>
+                    <li style="margin-bottom: 10px;">Use <strong>Step Through</strong> to advance one step at a time for detailed analysis</li>
+                    <li style="margin-bottom: 10px;">Hover over components to see detailed descriptions of each system</li>
+                    <li style="margin-bottom: 10px;">The timeline shows progress through the transaction lifecycle</li>
+                </ol>
+
+                <button id="tutorial-close" style="padding: 12px 25px; background: linear-gradient(45deg, var(--primary), var(--primary-light)); color: white; border: none; border-radius: var(--border-radius-md); cursor: pointer; font-weight: 500; font-size: 1rem; transition: all 0.3s ease; box-shadow: var(--shadow-md);">Begin Interactive Tour</button>
+            </div>
+        `;
+
+        document.body.appendChild(tutorialOverlay);
+
+        document.getElementById('tutorial-close').addEventListener('click', () => {
+            tutorialOverlay.remove();
+            const componentIds = Object.keys(components);
+            let index = 0;
+
+            function highlightNextComponent() {
+                if (index < componentIds.length) {
+                    const componentId = componentIds[index];
+                    const component = components[componentId];
+
+                    component.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    gsap.to(component, {
+                        boxShadow: '0 0 50px rgba(0, 255, 136, 0.9)',
+                        scale: 1.2,
+                        duration: 0.5,
+                        onComplete: () => {
+                            const rect = component.getBoundingClientRect();
+                            showTooltip(component, rect.left + rect.width / 2, rect.top);
+
+                            setTimeout(() => {
+                                hideTooltip();
+                                gsap.to(component, {
+                                    boxShadow: '0 8px 25px rgba(0, 0, 0, 0.5)',
+                                    scale: 1,
+                                    duration: 0.3
+                                });
+                                index++;
+                                highlightNextComponent();
+                            }, 3000);
+                        }
+                    });
+                } else {
+                    statusEl.textContent = 'Status: Tutorial complete! Try clicking Start Flow or Step Through';
+                }
+            }
+
+            highlightNextComponent();
+        });
+    }
+
+    function endTutorial() {
+        const tutorialOverlay = document.getElementById('tutorial-overlay');
+        if (tutorialOverlay) {
+            tutorialOverlay.remove();
+        }
+
+        Object.values(components).forEach(comp => {
+            gsap.to(comp, {
+                boxShadow: '0 8px 25px rgba(0, 0, 0, 0.5)',
+                scale: 1,
+                duration: 0.3
+            });
+        });
+
+        statusEl.textContent = 'Status: Tutorial ended. Ready to start flow.';
+    }
+
+    const authModal = document.getElementById('auth-modal');
+    const loginBtn = document.getElementById('login-btn');
+
+    loginBtn.addEventListener('click', () => {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        if (username && password) {
+            authModal.style.display = 'none';
+            statusEl.textContent = 'Status: Authentication successful!';
+
+            if (currentStep === 4) {
+                stepBtn.click();
+            }
+        } else {
+            statusEl.textContent = 'Status: Authentication failed. Please enter credentials.';
+        }
+    });
+
+    function showAuthModal() {
+        authModal.style.display = 'block';
+    }
+
+    // Initialize connection lines between components
+    function initializeConnectionLines() {
+        // Set up connection lines between components
+        setupConnectionLine('line-user-frontend', 'user', 'frontend');
+        setupConnectionLine('line-frontend-api', 'frontend', 'api');
+        setupConnectionLine('line-api-auth', 'api', 'auth');
+        setupConnectionLine('line-api-txn', 'api', 'txn');
+        setupConnectionLine('line-txn-compliance', 'txn', 'compliance');
+        setupConnectionLine('line-txn-db', 'txn', 'db');
+        setupConnectionLine('line-txn-bank', 'txn', 'bank');
+        setupConnectionLine('line-bank-receiver', 'bank', 'receiver');
+    }
+
+    function setupConnectionLine(lineId, fromId, toId) {
+        const line = document.getElementById(lineId);
+        const from = components[fromId];
+        const to = components[toId];
+
+        if (!line || !from || !to) return;
+
+        const containerRect = container.getBoundingClientRect();
+        const fromRect = from.getBoundingClientRect();
+        const toRect = to.getBoundingClientRect();
+
+        const fromX = fromRect.left + fromRect.width/2 - containerRect.left;
+        const fromY = fromRect.top + fromRect.height/2 - containerRect.top;
+        const toX = toRect.left + toRect.width/2 - containerRect.left;
+        const toY = toRect.top + toRect.height/2 - containerRect.top;
+
+        // Calculate angle and length
+        const angle = Math.atan2(toY - fromY, toX - fromX) * 180 / Math.PI;
+        const length = Math.sqrt(Math.pow(toX - fromX, 2) + Math.pow(toY - fromY, 2));
+
+        // Position and rotate the line
+        gsap.set(line, {
+            left: fromX,
+            top: fromY,
+            width: length,
+            rotation: angle,
+            transformOrigin: '0 0'
+        });
+    }
+
+    defineFlow();
+    updateComponentPositions();
+
+    // Initialize connection lines
+    initializeConnectionLines();
+
+    // Update connection lines on window resize
+    window.addEventListener('resize', function() {
+        setTimeout(initializeConnectionLines, 300);
+    });
+
+    window.addEventListener('error', function(e) {
+        console.error('Application error:', e.error);
+        statusEl.textContent = 'Error: ' + (e.error?.message || 'Unknown error occurred');
+    });
+
+    if (window.innerWidth <= 768) {
+        document.getElementById('customization-panel').style.display = 'none';
+    }
+
+    // Add layer labels for better visualization
+    const addLayerLabel = (text, top, left) => {
+        const label = document.createElement('div');
+        label.className = 'layer-label';
+        label.textContent = text;
+        label.style.cssText = `
+            position: absolute;
+            top: ${top}px;
+            left: ${left}%;
+            transform: translateX(-50%);
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            font-weight: 500;
+            opacity: 0.7;
+            pointer-events: none;
+            z-index: 1;
+        `;
+        container.appendChild(label);
+    };
+
+    // Add layer labels if not on mobile
+    if (window.innerWidth > 600) {
+        addLayerLabel('USER LAYER', 70, 50);
+        addLayerLabel('FRONTEND LAYER', 190, 15);
+        addLayerLabel('API & MIDDLEWARE', 190, 35);
+        addLayerLabel('CORE SERVICES', 190, 55);
+        addLayerLabel('INTEGRATION LAYER', 190, 75);
+    }
+
+    const watermark = document.createElement('div');
+    watermark.style.cssText = `
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        font-size: 12px;
+        opacity: 0.5;
+        color: var(--text-secondary);
+        pointer-events: none;
+        z-index: 1;
+    `;
+    watermark.innerHTML = 'NovoRemitAll Enterprise &copy; ' + new Date().getFullYear();
+    document.body.appendChild(watermark);
+
+    setTimeout(() => {
+        Object.values(components).forEach(comp => {
+            comp.style.transition = 'none';
+            comp.style.opacity = '1';
+        });
+        setTimeout(() => {
+            Object.values(components).forEach(comp => {
+                comp.style.transition = '';
+            });
+        }, 50);
+    }, 100);
+</script>
+</body>
+</html>
