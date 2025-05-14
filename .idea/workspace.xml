@@ -4,7 +4,219 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad282df8-4ab3-4c0b-a947-294594f428ec" name="Changes" comment="All changes pushed" />
+    <list default="true" id="ad282df8-4ab3-4c0b-a947-294594f428ec" name="Changes" comment="All changes pushed">
+      <change beforePath="$PROJECT_DIR$/.idea/.cache/.ApidogFastRequest/.toolWindow.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/AugmentWebviewStateStore.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JAVA_DEVELOPER_INTERVIEW.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaInterviewQuestionsIndex.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrganizationIndex.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/implementation-steps.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA DSA INTERVIEW/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA DSA INTERVIEW/.idea/JAVA DSA INTERVIEW.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA DSA INTERVIEW/.idea/material_theme_project_new.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA DSA INTERVIEW/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA DSA INTERVIEW/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA DSA INTERVIEW/AdvancedJava/AdvancedJavaInterviewQuestions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA DSA INTERVIEW/CodingQuestions/Arrays/MaximumSubarray.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA DSA INTERVIEW/CodingQuestions/Arrays/TwoSum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA DSA INTERVIEW/CodingQuestions/CodingQuestionsIndex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA DSA INTERVIEW/CodingQuestions/LinkedList/DetectCycleInLinkedList$ListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA DSA INTERVIEW/CodingQuestions/LinkedList/DetectCycleInLinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA DSA INTERVIEW/CodingQuestions/LinkedList/ReverseLinkedList$ListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA DSA INTERVIEW/CodingQuestions/LinkedList/ReverseLinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA DSA INTERVIEW/CodingQuestions/String/LongestSubstringWithoutRepeatingCharacters.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA DSA INTERVIEW/CoreJava/CoreJavaInterviewQuestions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA DSA INTERVIEW/DataStructuresAndAlgorithms/DSAInterviewQuestions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA DSA INTERVIEW/DataStructuresAndAlgorithms/TwoSum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA DSA INTERVIEW/JavaInterviewQuestionsIndex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA DSA INTERVIEW/Microservices/MicroservicesInterviewQuestions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA DSA INTERVIEW/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/.idea/.cache/.ApidogFastRequest/.toolWindow.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/.idea/AugmentWebviewStateStore.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/.idea/git_toolbox_prj.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/AdvancedJava/AdvancedJavaInterviewQuestions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/AdvancedJava/Annotations.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/AdvancedJava/Concurrency.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/AdvancedJava/Generics.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/AdvancedJava/LambdaStreams.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/AdvancedJava/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/AdvancedJava/Reflection.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/CSVNumberProcessor$ProcessingResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/CSVNumberProcessor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/ExceptionHandlingDemo$DataProcessingException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/ExceptionHandlingDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/FibonacciNoDuplicates.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/MaxVowelsFinder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/NoSecondHighestException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/NumberReverser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/PolymorphicAdder$DoubleNumber.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/PolymorphicAdder$IntegerNumber.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/PolymorphicAdder$Number.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/PolymorphicAdder$NumberFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/PolymorphicAdder$StringNumber.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/PolymorphicAdder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/SearchAlgorithm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/SecondHighestFinder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/Section_I_Theoretical_Answers.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/SortDescending.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/ThreadSafetyDemo$AtomicCounter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/ThreadSafetyDemo$LockBasedCounter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/ThreadSafetyDemo$Supplier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/ThreadSafetyDemo$SynchronizedCounter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/ThreadSafetyDemo$UnsafeCounter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/ThreadSafetyDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/XMLParser$Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/BlitzenxIntervierwQnA/XMLParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/Arrays/MaximumSubarray.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/Arrays/TwoSum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/AccessModifiersDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/AccessModifiersSubclass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/Address.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/Animal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/BankAccount.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/BaseAnimal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/BindingExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/Calculator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/Camera.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/Car.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/Cat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/Child.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/Circle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/CircleExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/Colorable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/CompanyEmployee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/CountCharacters.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/Dog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/DogPet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/DoubleCheckedLockingSingleton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/Drawable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/DrawableCircle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/DrawableRectangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/EagerInitializationSingleton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/Employee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/EncapsulationAndAccessModifiers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/EnumSingleton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/EqualsHashCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/EqualsVsDoubleEquals.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/GeometricShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/ImmutableClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/ImmutablePerson.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/InterfaceVsAbstractClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/JavaCloning.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/LazyInitializationSingleton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/Manager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/MathCalculator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/ModernVehicle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/OverloadingVsOverriding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/PalindromeCheck.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/Parent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/PersonWithCopyConstructor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/PersonWithDeepCopy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/PersonWithEqualsAndHashCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/PersonWithEqualsOnly.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/PersonWithObjectsUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/PersonWithShallowCopy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/PersonWithoutEqualsHashCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/Phone.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/PrintPatterns.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/Processor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/Rectangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/RectangleShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/RemoveDuplicateChars.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/ReverseString.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/RoundShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/Shape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/SingletonClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/SmartPhone.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/SwapNumbers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/ThisAndSuper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/ThreadSafeSingleton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/Vehicle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/WebBrowser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/WithEqualsOverride.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/CoreJavaOOP/WithoutEqualsOverride.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/LinkedList/DetectCycleInLinkedList$ListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/LinkedList/DetectCycleInLinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/LinkedList/ReverseLinkedList$ListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/LinkedList/ReverseLinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/Practical_Coding_Problems_Organized.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CodingQuestions/String/LongestSubstringWithoutRepeatingCharacters.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CoreJava/AdvancedMultithreading.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CoreJava/Collections.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CoreJava/ExceptionHandling.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CoreJava/JavaBasics.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CoreJava/JavaIO.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CoreJava/Multithreading.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CoreJava/OOPConcepts.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CoreJava/Q16-CompletableFuture.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CoreJava/Q17-ForkJoinPool.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/CoreJava/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/DataStructuresAndAlgorithms/ArraysStrings.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/DataStructuresAndAlgorithms/DSAInterviewQuestions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/DataStructuresAndAlgorithms/HashTables.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/DataStructuresAndAlgorithms/LinkedLists.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/DataStructuresAndAlgorithms/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/DataStructuresAndAlgorithms/StacksQueues.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/DataStructuresAndAlgorithms/TreesGraphs.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/DataStructuresAndAlgorithms/problem-solving-patterns.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/JAVA DSA INTERVIEW.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/JAVA_DEVELOPER_INTERVIEW.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/JavaInterviewQuestionsIndex.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/Microservices/MicroservicesInterviewQuestions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/MockInterviews/Basic-Stream-Operations.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/MockInterviews/Collections-Framework.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/MockInterviews/Core-Java-Basics.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/MockInterviews/Database-JPA-Hibernate.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/MockInterviews/Java-Memory-Model.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/MockInterviews/Multithreading-Questions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/MockInterviews/QuestionIndex.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/MockInterviews/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/MockInterviews/Spring-Framework-Core.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/MockInterviews/Tricky-Interview-Questions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/MockInterviews/Tricky_Interview_Questions_Organized.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/MySqlAndDatabase/mySql.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/OrganizationIndex.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/Practical_Coding_Problems.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/RabbitMQ/RabbitMQ_Interview_Questions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/SQL_Interview_Questions.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/Spring/spring-best-practices.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/Spring/spring-coding-questions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/Spring/spring-debugging-questions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/Spring/spring-misc-question.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/Spring/spring-performance-questions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/Spring/spring-scenario-questions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/Spring/spring-security-questions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/Spring/spring-testing-questions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/Spring/spring-theory-questions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/SystemDesign/NovoRemitAll-Implementation-Challenges.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/SystemDesign/NovoRemitAll-Part1-Overview-Role.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/SystemDesign/NovoRemitAll-Part2A-System-Architecture.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/SystemDesign/NovoRemitAll-Part3-Team-Conflicts.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/SystemDesign/NovoRemitAll-Part4-Data-Strategy.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/SystemDesign/NovoRemitAll-README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/SystemDesign/NovoRemitAll-Resources.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/SystemDesign/NovoRemitAll-User-Journey.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/SystemDesign/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/SystemDesign/enhanced-transaction-flow.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/System_Design_Questions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/Tricky_Interview_Questions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/implementation-steps.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/numbers.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/push_to_github.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/reorganization-plan.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_DEVELOPER_INTERVIEW/reorganization-summary.md" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -179,7 +391,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747216761704</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="All changes pushed">
+      <option name="closed" value="true" />
+      <created>1747218018154</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747218018154</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
